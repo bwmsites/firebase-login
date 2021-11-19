@@ -14,7 +14,10 @@ const app = firebase.initializeApp({
 const auther = auth.getAuth(app);
 
 (async () => {
-    const userData = await auth.signInWithEmailAndPassword(auther, '', '');
+    const userName = '<your_username>';
+    const password = '<your_password>';
+
+    const userData = await auth.signInWithEmailAndPassword(auther, userName, password);
     // const refresh = userData.user.refreshToken;
     console.log({ idToken: await userData.user.getIdToken() });
 })()
